@@ -1,0 +1,16 @@
+MMMMMMM            MMMMMMMYYYYYYY    YYYYYYY        SSSSSSSSSSSS NNNNNNN        NNNNNNN                              KKKKKKKK    KKKKKKKEEEEEEEEEEEEEEEEEE
+M::::::M          M::::::MY:::::Y    Y:::::Y      SS::::::::::::SN::::::N       N:::::N              AA              K::::::K    K:::::KE::::::::::::::::E
+M:::::::M        M:::::::MY:::::Y    Y:::::Y     S::::SSSSS:::::SN:::::::N      N:::::N             A::A             K::::::K    K:::::KE::::::::::::::::E
+M::::::::M      M::::::::MY::::::Y  Y::::::Y     S::::S    SSSSSSN::::::::N     N:::::N            A::::A            K::::::K   K::::::KEE:::::EEEEEEE:::E
+M:::::::::M    M:::::::::MYYY:::::YY:::::YYY     S::::S          N:::::::::N    N:::::N           A::::::A           KK:::::K  K:::::KKK  E::::E     EEEEE
+M::::::::::M  M::::::::::M   Y::::::::::Y        S::::S          N::::::::::N   N:::::N          A::::::::A            K::::K K:::::K     E::::E          
+M::::::M::::MM::::M::::::M    Y::::::::Y          S:::SSSS       N::::::N::::N  N:::::N         A::::::::::A           K:::::K:::::K      E:::::EEEEEEEE  
+M:::::M M::::::::M M:::::M     Y::::::Y            SS:::::SSSS   N:::::N N::::N N:::::N        A:::::AA:::::A          K::::::::::K       E::::::::::::E  
+M:::::M  M::::::M  M:::::M      Y::::Y               SS:::::::S  N:::::N  N::::N::::::N       A:::::A  A:::::A         K::::::::::K       E::::::::::::E  
+M:::::M   M::::M   M:::::M       Y::Y                  SSSSS:::S N:::::N   N::::::::::N      A:::::AAAAAA:::::A        K:::::K:::::K      E:::::EEEEEEEE  
+M:::::M    M::M    M:::::M       Y::Y                      S::::SN:::::N    N:::::::::N     A::::::::::::::::::A       K::::K K:::::K     E::::E          
+M:::::M     MM     M:::::M       Y::Y                      S::::SN:::::N     N::::::::N    A:::::AAAAAAAAAA:::::A    KK:::::K  K:::::KKK  E::::E     EEEEE
+M:::::M            M:::::M       Y::Y            SSSSSS    S::::SN:::::N      N:::::::N   A:::::A          A:::::A   K::::::K   K::::::KEE:::::EEEEEE::::E
+M:::::M            M:::::M    YYYY::YYYY         S:::::SSSSS::::SN:::::N       N::::::N  A:::::A            A:::::A  K::::::K    K:::::KE::::::::::::::::E
+M:::::M            M:::::M    Y::::::::Y         S::::::::::::SS N:::::N        N:::::N A:::::A              A:::::A K::::::K    K:::::KE::::::::::::::::E
+MMMMMMM            MMMMMMM    YYYYYYYYYY          SSSSSSSSSSSS   NNNNNNN         NNNNNNAAAAAAA                AAAAAAAKKKKKKKK    KKKKKKKEEEEEEEEEEEEEEEEEE
