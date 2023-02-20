@@ -15,6 +15,7 @@ SRC	=	src/main_snake.c	\
 		src/snake_menu.c	\
 		src/snake_end.c		\
 		src/snake_border.c	\
+		src/main.c		\
 
 OBJ	=	$(SRC:.c=.o)
 

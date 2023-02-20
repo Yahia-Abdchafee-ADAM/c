@@ -14,6 +14,7 @@ SRC	=	src/main_tetris.c	\
 		src/tetris_tetriminos.c	\
 		src/tetris_map.c		\
 		src/display_test.c		\
+		src/main.c				\
 
 OBJ	=	$(SRC:.c=.o)
 

@@ -60,8 +60,3 @@ int my_tetris()
     tetris_game_loop(&tetris);
     return (0);
 }
-
-// int main()
-// {
-//     my_tetris();
-// }

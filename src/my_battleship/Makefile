@@ -16,7 +16,8 @@ SRC	=	src/main_navy.c			\
 		src/my_strtok.c		\
 		src/attack_value.c	\
 		src/my_strcmp.c		\
-
+		src/main.c			\
+	
 SRC_TEST =	
 
 OBJ	=	$(SRC:.c=.o)
