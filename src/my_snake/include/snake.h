@@ -41,8 +41,8 @@ typedef struct snake_s {
 } snake_t;
 
 void menu_snake();
-void init_color_s(void);
-snake_t *initialisation(void);
+void init_color_snake(void);
+snake_t *initialisation_snake(void);
 int snake_end(snake_t *snake);
 void snake_border(snake_t *snake);
 int snake_game_loop(snake_t *snake);

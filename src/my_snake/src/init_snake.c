@@ -2,7 +2,7 @@
 #include <ncurses.h>
 #include <stdlib.h>
 
-void init_color_s(void)
+void init_color_snake(void)
 {
     start_color();
     init_pair(GREEN, COLOR_GREEN, COLOR_BLACK);
@@ -12,7 +12,7 @@ void init_color_s(void)
     init_pair(SCREEN_GREEN, COLOR_BLACK, COLOR_GREEN);
 }
 
-snake_t *initialisation(void)
+snake_t *initialisation_snake(void)
 {
     snake_t *snake = malloc(sizeof(snake_t));
 

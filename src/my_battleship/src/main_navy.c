@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-int initialisation(navy_t *navy)
+int initialisation_navy(navy_t *navy)
 {
     create_file("logs/attack.txt");
     create_file("logs/connection.txt");
@@ -34,7 +34,7 @@ int my_navy(int ac, char **av)
             for (char c = 0; (c = fgetc(help)) != EOF; printf("%c", c));
         return (EXIT_SUCCESS);
     }
-    if (initialisation(&n) == EXIT_FAILURE)
+    if (initialisation_navy(&n) == EXIT_FAILURE)
         return (EXIT_FAILURE);
     if (ac == 2)
         if (player_one(&n, av) == EXIT_FAILURE)

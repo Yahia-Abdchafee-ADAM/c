@@ -5,7 +5,7 @@
 
 void restart()
 {
-    snake_t *snake = initialisation();
+    snake_t *snake = initialisation_snake();
     snake_game_loop(snake);
 }
 
@@ -22,7 +22,7 @@ int snake_end(snake_t *snake)
     noecho();
     curs_set(0);
     start_color();
-    init_color_s();
+    init_color_snake();
     nodelay(stdscr, true);
     getmaxyx(stdscr, snake->y_max, snake->x_max);
     while(1) {

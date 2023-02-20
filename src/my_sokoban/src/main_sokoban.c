@@ -3,7 +3,7 @@
 #include "my.h"
 #include "my_sokoban.h"
 
-void init_color_s(void)
+void init_color_sokoban(void)
 {
     start_color();
     init_pair(1, COLOR_GREEN, COLOR_BLACK);
@@ -43,7 +43,3 @@ void inite_my_value(pos_t *p)
     charge_map(p);
 }
 
-// int main(int ac, char **av)
-// {
-//     my_sokoban(ac, av);
-// }

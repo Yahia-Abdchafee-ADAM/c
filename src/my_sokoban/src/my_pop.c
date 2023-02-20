@@ -71,7 +71,7 @@ int my_pop(char **map_arr, pos_t *p)
     initscr();
     noecho();
     curs_set(0);
-    init_color_s();
+    init_color_sokoban();
     if (LINES < line || COLS < (cols))
         mvprintw(LINES / 2, ((COLS / 2) - 12), "Too small...");
     else {

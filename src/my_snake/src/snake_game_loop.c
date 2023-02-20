@@ -24,7 +24,7 @@ int snake_game_loop(snake_t *snake)
     o_x = random_number(13, snake->x_max - 13);
     o_y = random_number(13, snake->y_max - 13);
     snake_border(snake);
-    init_color_s();
+    init_color_snake();
     while (1) {
         mvprintw(1, 6, "Your score: %i", snake->score);
         if (snake->border_mode == true) {

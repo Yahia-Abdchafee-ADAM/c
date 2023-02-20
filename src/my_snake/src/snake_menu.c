@@ -16,13 +16,13 @@ void menu_snake()
     char *snake_map = read_file("config/snake_template.txt");
     char **my_snake = my_strtok(read_file("config/my_snake.txt"), "\n");
     char **menu_choise = my_strtok(read_file("config/menu_choice.txt"), "\n");
-    snake_t *snake = initialisation();
+    snake_t *snake = initialisation_snake();
 
     initscr();
     noecho();
     curs_set(0);
     start_color();
-    init_color_s();
+    init_color_snake();
     nodelay(stdscr, true);
     getmaxyx(stdscr, snake->y_max, snake->x_max);
     while(1) {

@@ -12,6 +12,8 @@ SRC	=	src/main_sokoban.c			\
 		src/help.c					\
 		src/open_directory.c		\
 		src/time.c					\
+		src/do_my_array.c			\
+		src/main.c					\
 
 SRC_TEST =	lib/my/my_putchar.c			\
 			lib/my/my_put_nbr.c			\

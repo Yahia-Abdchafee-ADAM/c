@@ -26,7 +26,6 @@ void intermediate_sokoban(pos_t *p)
 
 int my_sokoban(int ac, char **av)
 {
-
    pos_t p;
 
    if (ac == 2) {
