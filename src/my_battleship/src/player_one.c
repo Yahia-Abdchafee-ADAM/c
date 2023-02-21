@@ -117,7 +117,7 @@ int game_loop_player_one(navy_t *navy)
 
 int player_one(navy_t *navy, char **av)
 {
-    navy->player_one_map = read_file(av[1]);
+    navy->player_one_map = read_file("maps/position1.txt");
     if (write_in_file("logs/player_one_map.txt", navy->player_one_map) == EXIT_FAILURE)
         return (EXIT_FAILURE);
     player_one_connection(navy);
