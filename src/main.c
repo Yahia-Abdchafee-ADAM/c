@@ -38,7 +38,8 @@ int main(int ac, char **av)
         }
         if (strcmp(input, "4") == 0) {
             chdir("./src/my_battleship/");
-            system("./my_battleship");
+            system("gnome-terminal --tab -- bash -c 'sleep 1s; ./my_battleship maps/position2.txt; exec bash -i'");
+            system("./my_battleship maps/position1.txt 1111");
             chdir("..");
             chdir("..");
         }

@@ -9,9 +9,9 @@
 void display_player_one(navy_t *navy)
 {
     printf("\nmy positions:\n");
-    printf("%s\n", navy->player_one_map);
+    print_myboard(navy->player_one_map);
     printf("enemy’s positions:\n");
-    printf("%s\n", navy->map);
+    print_ennemy_board(navy->player_two_map);
 }
 
 int player_one_connection(navy_t *navy)
@@ -22,8 +22,8 @@ int player_one_connection(navy_t *navy)
     int time_out = 0;
 
     stat("lgs/connection.txt", &st);
-    navy->player_one_pid = getpid();
-    printf("my_pid:     %d\nwaiting for enemy connection...\n", navy->player_one_pid);
+    navy->player_one_pid = 1111;
+    printf("My_pid:     %d\nWaiting for enemy connection...\n", navy->player_one_pid);
     while (navy->player_one_pid != navy->player_two_pid) {
         if (time_out >= 60) {
             printf("\033[0;31mErr_Connection_Timed_Out\033[0m\n");
@@ -38,9 +38,9 @@ int player_one_connection(navy_t *navy)
             }
         }
     }
-    navy->player_two_map = read_file("logs/player_two_map.txt");
+    navy->player_two_map = my_strtok(read_file("logs/player_two_map.txt"), "\n");
     remove("logs/player_two_map.txt");
-    printf("\033[0;32m\n\nenemy connected\033[0m\n");
+    printf("\033[0;32m\nEnemy connected\033[0m\n");
     connect = fopen("logs/connection.txt", "w+");
     fputs(my_int_to_str(navy->player_one_pid + 1), connect);
     fclose(connect);
@@ -64,12 +64,12 @@ void wait_for_attack_player_one(navy_t *navy)
         go_attack = read_file("logs/player_one_attack.txt");
     }
     attack = read_file("logs/attack.txt");
-    if (navy->player_two_map[attack_value(attack)] == '.') {
-        printf("%c%c:     \033[0;31mmissed\033[0m\n", attack[0], attack[1]);
-        navy->map[attack_value(attack)] = 'o';
-    } else {
+    if (navy->player_one_map[attack[1] - '0'][attack[0] - 'A'] == '0') {
         printf("%c%c:     \033[0;32mhit\033[0m\n", attack[0], attack[1]);
-        navy->player_one_map[attack_value(attack)] = 'X';
+        navy->player_one_map[attack[1] - '0'][attack[0] - 'A'] = '*';
+    } else {
+        navy->player_one_map[attack[1] - '0'][attack[0] - 'A'] = ' ';
+        printf("%c%c:     \033[0;31mmissed\033[0m\n", attack[0], attack[1]);
     }
 }
 
@@ -79,13 +79,12 @@ bool is_valid_attack_player_one(char attack[250], navy_t *navy)
         if (strcmp(navy->dico_of_attack[i], attack) == 0) {
             write_in_file("logs/player_one_attack.txt", "false");
             write_in_file("logs/player_two_attack.txt", "true");
-            if (navy->player_two_map[attack_value(attack)] != '.') {
+            if (navy->player_two_map[attack[1] - '0'][attack[0] - 'A'] == '0') {
                 printf("%s: \033[0;32mhit\033[0m\n", attack);
-                navy->map[attack_value(attack)] = 'X';
-                navy->player_two_map[attack_value(attack)] = '.';
+                navy->player_two_map[attack[1] - '0'][attack[0] - 'A'] = '*';
             } else {
                 printf("%s: \033[0;31mmissed\033[0m\n", attack);
-                navy->map[attack_value(attack)] = 'O';
+                navy->player_two_map[attack[1] - '0'][attack[0] - 'A'] = ' ';
             }
             write_in_file("logs/attack.txt", attack);
             return (true);
@@ -110,6 +109,14 @@ int game_loop_player_one(navy_t *navy)
             if (is_valid_attack == false)
                 printf("wrong position\n");
         }
+        if (get_ship_number(navy->player_two_map) == 0) {
+            printf("\033[0;32mYou win\033[0m");
+            return (0);
+        }
+        if (get_ship_number(navy->player_one_map) == 0) {
+            printf("\033[0;31mYou lost\033[0m\n");
+            return (0);
+        }
         display_player_one(navy);
     }
     return (0);
@@ -117,13 +124,10 @@ int game_loop_player_one(navy_t *navy)
 
 int player_one(navy_t *navy, char **av)
 {
-    navy->player_one_map = read_file("maps/position1.txt");
-    if (write_in_file("logs/player_one_map.txt", navy->player_one_map) == EXIT_FAILURE)
+    navy->player_one_map = generate_random_map();
+    if (write_array_in_file("logs/player_one_map.txt", navy->player_one_map, SIZE) == EXIT_FAILURE)
         return (EXIT_FAILURE);
     player_one_connection(navy);
-    printf("\nmy positions:\n");
-    printf("%s\n", navy->player_one_map);
-    printf("enemy’s positions:\n");
-    printf("%s\n", navy->map);
+    display_player_one(navy);
     game_loop_player_one(navy);
 }

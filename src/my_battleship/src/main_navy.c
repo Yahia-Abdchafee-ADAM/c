@@ -15,11 +15,6 @@ int initialisation_navy(navy_t *navy)
     write_in_file("logs/player_two_attack.txt", "true");
     write_in_file("logs/player_one_attack.txt", "false");
     navy->dico_of_attack = my_strtok(read_file("configs/dico_attack.txt"), " ");
-    navy->map = read_file("configs/map.txt");
-    if (!(navy->player_one_map = strdup(navy->map)))
-        return (EXIT_FAILURE);
-    if (!(navy->player_two_map = strdup(navy->map)))
-        return (EXIT_FAILURE);
     music(navy);
     return (EXIT_SUCCESS);
 }
@@ -46,8 +41,3 @@ int my_navy(int ac, char **av)
     fclose(help);
     return (EXIT_SUCCESS);
 }
-
-// int main(int ac, char **av)
-// {
-//     my_navy(ac, av);
-// }
